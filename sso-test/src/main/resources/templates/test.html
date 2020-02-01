@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>test系统页面</title>
+</head>
+<body>
+    <h1>我是test系统</h1>
+    <button type="button" onclick="window.location.href='/test/logout?service=http://localhost:8080/test/test'">退出</button>
+    <script>
+        function logout() {
+            window.location.href="/sso/login/logout";
+        }
+    </script>
+</body>
+</html>

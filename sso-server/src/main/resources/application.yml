@@ -1,0 +1,22 @@
+spring:
+  thymeleaf:
+    # 开发时关闭缓存,不然没法看到实时页面
+    # 这个必须配合 spring-boot-devtools 才能生效
+    cache: false
+    # 默认配置下，thymeleaf对.html的内容要求很严格，比如<meta charset="UTF-8" />，如果少最后的标签封闭符号/，就会报错而转到错误页。
+    # 比如你在使用Vue.js这样的库，然后有<div v-cloak></div>这样的html代码，也会被thymeleaf认为不符合要求而抛出错误。
+    # LEGACYHTML5需要搭配一个额外的库NekoHTML（net.sourceforge.nekohtml）才可用
+    mode: HTML
+    # 模板路径
+    prefix: classpath:/templates/
+    # 模板后缀
+    suffix: .html
+    # 文件编码
+    encoding: UTF-8
+    servlet:
+      # 文件类型
+      content-type: text/html
+server:
+  servlet:
+    context-path: /sso
+  port: 9090
